@@ -1,26 +1,16 @@
-﻿@{
-    string name = "Site";
-    int number = 12;
-    int[] mass = new int[] { 1, 4, 7, 9, 3, 5, 8 };
-    bool flag = false;
-     
+﻿@using SG2.ViewModels
+
+@model IndexViewModel
+@{
+      
 }
 
 <head>
     <link href="../../css/Index.css" rel="stylesheet" />
 </head>
-<p>@name</p>
 
-@if (flag)
-{
-    <p>@flag</p>
-}
-else
-{
-    <p>@flag</p>
-}
+<a asp-controller="Home" asp-action="Short" >ЖМЯК</a>
 
-@foreach(var item in mass)
-{
-    <p>@item</p>
-}
+<p>@Model.user.Name</p>
+<p>@Model.user.Email</p>
+<p>@Model.car.Name</p>
