@@ -6,11 +6,13 @@ namespace SG2.ViewModels
     {
         public User user;
         public Car car;
+        public string? value;
 
-        public IndexViewModel(User user, Car car)
+        public IndexViewModel(User user, Car car, string? value)
         {
             this.user = user;
             this.car = car;
+            this.value = value??"not";
         }
     }
 }

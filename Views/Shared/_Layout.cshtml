@@ -3,8 +3,8 @@
         <title>SG2</title>
     </head>
     <body>
-        <div>header</div>
+        @await Html.PartialAsync("Header") 
         @RenderBody()
-        <div>footer</div>
+        @await Html.PartialAsync("Footer")
     </body>
 </html>

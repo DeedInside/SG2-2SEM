@@ -11,12 +11,25 @@ namespace SG2.Controllers
 
         public IActionResult Index()
         {
-            IndexViewModel _indexViewModel = new IndexViewModel(_user, _car);
+            IndexViewModel _indexViewModel = 
+                new IndexViewModel(_user, _car, null);
+            return View(_indexViewModel);
+        }
+        
+        public IActionResult Index(string userName)
+        {
+
+            IndexViewModel _indexViewModel = new IndexViewModel(_user, _car, userName);
             return View(_indexViewModel);
         }
         public IActionResult Short()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult Short(string userName, string userPassword)
+        {
+            return  ViewComponent("Index", userName);
         }
     }
 }
